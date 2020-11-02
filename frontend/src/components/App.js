@@ -13,7 +13,7 @@ import AddUserDetail from './Dashboard/AddDetail';
 import Profile from './Student/Profile';
 import UserLogInForm from './auth/UserLogInForm';
 import NotFoundPage from './common/pageNotFound';
-import UserRegisterationForm from './auth/UserRegistration'
+
 
 class App extends Component {
 
@@ -34,7 +34,6 @@ class App extends Component {
                             <Route exact path='/home/admin' component={AdminLoginForm} />
                             <Route exact path='/home/detail/:id' component={AddUserDetail} />
                             <Route exact path='/home/profile/:id' component={Profile} />
-                            <Route exact path='/home/register' component={UserRegisterationForm} />
                             <Route path="" component={NotFoundPage} />
                         </Switch>
                     </div>

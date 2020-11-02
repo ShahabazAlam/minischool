@@ -72,9 +72,6 @@ class UserLoginForm extends Component {
                             </Button>
                         </Segment>
                     </Form>
-                    <Message>
-                        New to us? <Link to='/home/register'>Sign Up</Link>
-                    </Message>
                 </Grid.Column>
             </Grid>
         );
