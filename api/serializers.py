@@ -2,6 +2,8 @@ from rest_framework import serializers
 from .models import AccountDetail
 from accounts.serializers import UserSerializer
 
+# User deatil serializer
+
 
 class DetailSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()

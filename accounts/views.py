@@ -10,6 +10,7 @@ from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
 
 
+# Login user api
 class UserAPIView(generics.RetrieveAPIView):
     permission_classes = [
         permissions.IsAuthenticated,
@@ -20,6 +21,7 @@ class UserAPIView(generics.RetrieveAPIView):
         return self.request.user
 
 
+# Register user api
 class RegisterAPIView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
 

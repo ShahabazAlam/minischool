@@ -21,6 +21,7 @@ from accounts.models import User
 from rest_framework import status
 
 
+# Fetch user deatil serializer
 class FetchUsersAPIView(ListAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = DetailSerializer
@@ -30,6 +31,7 @@ class FetchUsersAPIView(ListAPIView):
         return AccountDetail.objects.filter(user__role=slug)
 
 
+# Add user deatil serializer
 class AddDetailView(APIView):
     permission_classes = [AllowAny, ]
     parser_class = (FileUploadParser,)
@@ -79,6 +81,7 @@ class AddDetailView(APIView):
         return Response({"message": 'Update Successfully'}, status=HTTP_200_OK)
 
 
+# Fetch single user detail
 class FetchUserAPIView(RetrieveAPIView):
     serializer_class = DetailSerializer
     permission_classes = (IsAuthenticated,)
@@ -92,6 +95,7 @@ class FetchUserAPIView(RetrieveAPIView):
             raise Http404("User Not Found")
 
 
+# delete user
 class DeleteUserAPIView(APIView):
     def delete(self, request, id, format=None):
         pk = request.data.get('id', None)

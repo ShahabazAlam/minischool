@@ -60,7 +60,7 @@ export const login = (username, password, role = 'S') => async dispatch => {
     }
 };
 
-// logout method 
+// LOGOUT USER
 export const logout = () => async (dispatch, getState) => {
     try {
         await axios.post('/accounts/logout/', null, tokenConfig(getState));

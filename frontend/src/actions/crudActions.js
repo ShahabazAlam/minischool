@@ -20,6 +20,7 @@ import {
 import history from '../history';
 import { tokenConfig } from './auth'
 
+// ADD USER DETAIL
 export const AddDetail = (formData) => async (dispatch, getState) => {
     dispatch({
         type: ADD_USER_DETAIL
@@ -74,7 +75,7 @@ export const register = (username, password, activeItem) => async dispatch => {
 
 
 
-// DELETE TODO
+// FETCH USERS
 export const fetchUsersData = (activeItem) => async (dispatch, getState) => {
     dispatch({
         type: GET_USERS
@@ -94,6 +95,8 @@ export const fetchUsersData = (activeItem) => async (dispatch, getState) => {
     }
 }
 
+
+// FETCH USER
 export const fetchUser = (id) => async (dispatch, getState) => {
     dispatch({
         type: GET_USER
@@ -113,6 +116,9 @@ export const fetchUser = (id) => async (dispatch, getState) => {
     }
 };
 
+
+
+// DELETE USER
 export const deleteUser = (id) => async (dispatch, getState) => {
     dispatch({
         type: DELETING_USER

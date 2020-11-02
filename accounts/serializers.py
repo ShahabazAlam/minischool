@@ -4,6 +4,8 @@ from api.models import AccountDetail
 from rest_framework import serializers
 from .models import User
 
+# User serializer
+
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -12,6 +14,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'email', 'role')
 
 
+# User register serializer
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -29,6 +32,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             return user
 
 
+# User login serializer
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField()
