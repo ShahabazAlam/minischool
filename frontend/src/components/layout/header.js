@@ -24,7 +24,7 @@ class Header extends Component {
         const { isAuthenticated, user } = this.props.auth;
         const AuthorizedUserLinks = (
             <Menu.Menu position='right'>
-                {user && user.role !== 'S' && <Menu.Item as={Link} to='/home/'><strong>Dashboard</strong></Menu.Item>}
+                {user && user.role !== 'S' && <Menu.Item as={Link} to='/'><strong>Dashboard</strong></Menu.Item>}
                 <Dropdown item text={user && user.username} icon='user'>
                     <Dropdown.Menu>
                         <Dropdown.Item onClick={this.props.logout} >LogOut</Dropdown.Item>
@@ -34,7 +34,7 @@ class Header extends Component {
 
         )
         const UnauthorizedUserLinks = (
-            <Menu.Item as={Link} to='/home/login'
+            <Menu.Item as={Link} to='/login'
                 variant="outline-primary"
                 position='right'
                 name='LogIn' />
@@ -42,7 +42,7 @@ class Header extends Component {
         return (
             <Segment inverted style={{ textAlign: 'center', position: 'fixed', width: '100%', background: 'black', top: 0, zIndex: 20 }}>
                 <Menu size='large' inverted pointing secondary >
-                    <Menu.Item as={Link} to='/home/'><strong>My-School</strong></Menu.Item>
+                    <Menu.Item as={Link} to='/'><strong>My-School</strong></Menu.Item>
 
                     {isAuthenticated ? AuthorizedUserLinks : UnauthorizedUserLinks}
                 </Menu>

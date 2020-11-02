@@ -49,8 +49,8 @@ export const login = (username, password, role = 'S') => async dispatch => {
             type: LOGIN_SUCCESS,
             payload: res.data
         })
-        if (res.data.user.role === 'S') { history.push(`/home/profile/${res.data.id}`) }
-        else { history.push(`/home/`) }
+        if (res.data.user.role === 'S') { history.push(`/profile/${res.data.id}`) }
+        else { history.push(`/`) }
     } catch (err) {
         const errMsg = err.response.data;
         dispatch({
@@ -67,7 +67,7 @@ export const logout = () => async (dispatch, getState) => {
         dispatch({
             type: LOGOUT_SUCCESS
         });
-        history.push('/home/login/');
+        history.push('/login/');
     } catch (err) {
         const errMsg = err.response.data;
         dispatch({

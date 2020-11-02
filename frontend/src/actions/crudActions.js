@@ -30,7 +30,7 @@ export const AddDetail = (formData) => async (dispatch, getState) => {
         dispatch({
             type: ADD_USER_DETAIL_SUCCESS,
         });
-        history.push(`/home/`)
+        history.push(`/`)
     } catch (err) {
         const errmsg = err.response.data;
         dispatch({
@@ -63,7 +63,7 @@ export const register = (username, password, activeItem) => async dispatch => {
         dispatch({
             type: ADD_USER_SUCCESS
         });
-        history.push(`/home/detail/${res.data.user.id}`)
+        history.push(`/detail/${res.data.user.id}`)
     } catch (err) {
         const errmsg = err.response.data;
         dispatch({

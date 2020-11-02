@@ -9,10 +9,9 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('api/', include('api.urls')),
     path('superadmin/', admin.site.urls),
-    re_path(r'^home/',
-            TemplateView.as_view(template_name='frontend/index.html')),
-    path('', TemplateView.as_view(template_name='frontend/index.html')),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,
                       document_root=settings.MEDIA_ROOT)
+urlpatterns += [re_path(r'^.*',
+                        TemplateView.as_view(template_name='frontend/index.html'))]

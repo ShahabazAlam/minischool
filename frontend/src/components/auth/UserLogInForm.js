@@ -29,7 +29,7 @@ class UserLoginForm extends Component {
         const { username, password } = this.state;
         const { isAuthenticated, isLoading } = this.props.auth;
         if (isAuthenticated) {
-            return <Redirect to='/home/' />;
+            return <Redirect to='/' />;
         }
         return (
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>

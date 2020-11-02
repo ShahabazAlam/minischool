@@ -28,12 +28,11 @@ class App extends Component {
                     <Header />
                     <div style={{ marginBottom: '60px', marginTop: '100px' }}>
                         <Switch>
-                            <PrivateRoute exact path='/home/' component={Dashboard} />
                             <PrivateRoute exact path='/' component={Dashboard} />
-                            <Route path='/home/login/' component={UserLogInForm} />
-                            <Route exact path='/home/admin' component={AdminLoginForm} />
-                            <Route exact path='/home/detail/:id' component={AddUserDetail} />
-                            <Route exact path='/home/profile/:id' component={Profile} />
+                            <Route path='/login/' component={UserLogInForm} />
+                            <Route exact path='/admin' component={AdminLoginForm} />
+                            <Route exact path='/detail/:id' component={AddUserDetail} />
+                            <Route exact path='/profile/:id' component={Profile} />
                             <Route path="" component={NotFoundPage} />
                         </Switch>
                     </div>
